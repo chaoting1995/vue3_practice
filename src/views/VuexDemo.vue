@@ -1,40 +1,17 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/vuexDemo">VuexDemo</router-link> |
-    <router-link to="/chartdemo">ChartDemo</router-link>
-  </div>
-  <router-view />
+  <h1>This is an about page</h1>
+  {{ greeting }}<br />
+  {{ price }}<br />
+  {{ product }}<br />
+  {{ quantity }}<br />
+  <input v-model="qty" />
+  <button @click="setQuantity(qty)">mutations</button><br />
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
 <script>
 // 匯入 vuex 提供的工具，回傳物件，內部放function
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 export default {
-  name: "App",
+  name: "VuexDemo",
   data() {
     return {
       qty: 0,
